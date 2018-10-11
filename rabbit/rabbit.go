@@ -2,16 +2,16 @@ package rabbit
 
 import (
 	"encoding/json"
-
 	"regexp"
-	// "github.com/glenn-brown/golang-pkg-pcre/src/pkg/pcre"
 )
 
+// RuleStruct maps the rule object from json
 type RuleStruct struct {
 	From string `json:from`
 	To   string `json:to`
 }
 
+//Convert unicode string to zawgyi
 func Uni2zg(str string) string {
 	rule := `[
         {
@@ -323,12 +323,9 @@ func Uni2zg(str string) string {
 	return replaceWithRule(rule, str)
 }
 
+//Convert zawgyi string to unicode
 func Zg2uni(str string) string {
 	rule := `[
-        {
-            "from" : "([\u102D\u102E\u103D\u102F\u1037\u1095])\\1+",
-            "to" : "$1"
-        },
         {
             "from": "\u200B",
             "to": ""
@@ -562,7 +559,7 @@ func Zg2uni(str string) string {
             "to": "\u103c$1\u103a"
         },
         {
-            "from": "\u1047(?=[\u102c-\u1030\u1032\u1036-\u1038\u103d\u1038])",
+            "from": "\u1047?=[\u102c-\u1030\u1032\u1036-\u1038\u103d\u1038]",
             "to": "\u101b"
         },
         {
@@ -578,15 +575,15 @@ func Zg2uni(str string) string {
             "to": "$1\u101d\u102b"
         },
         {
-            "from": "([\u1040\u1041\u1042\u1043\u1044\u1045\u1046\u1047\u1048\u1049])\u1040\u102b(?!\u1038)",
+            "from": "([\u1040\u1041\u1042\u1043\u1044\u1045\u1046\u1047\u1048\u1049])\u1040\u102b?!\u1038",
             "to": "$1\u101d\u102b"
         },
         {
-            "from": "^\u1040(?=\u102b)",
+            "from": "^\u1040?=\u102b",
             "to": "\u101d"
         },
         {
-            "from": "\u1040\u102d(?!\u0020?/)",
+            "from": "\u1040\u102d?!\u0020?/",
             "to": "\u101d\u102d"
         },
         {
@@ -594,7 +591,7 @@ func Zg2uni(str string) string {
             "to": "$1\u101d$2"
         },
         {
-            "from": "([^\u1040-\u1049])\u1040(?=[\\f\\n\\r])",
+            "from": "([^\u1040-\u1049])\u1040?=[\\f\\n\\r]",
             "to": "$1\u101d"
         },
         {
@@ -638,7 +635,7 @@ func Zg2uni(str string) string {
             "to": "$2$1"
         },
         {
-            "from": "\u1025(?=[\u1037]?[\u103a\u102c])",
+            "from": "\u1025?=[\u1037]?[\u103a\u102c]",
             "to": "\u1009"
         },
         {
@@ -797,6 +794,7 @@ func Zg2uni(str string) string {
 	return replaceWithRule(rule, str)
 }
 
+//Replace the string by matching arrays of regex
 func replaceWithRule(rule string, output string) string {
 
 	var ruleArr []RuleStruct
@@ -805,14 +803,12 @@ func replaceWithRule(rule string, output string) string {
 	if err != nil {
 		panic(err.Error())
 	}
+	re2 := regexp.MustCompile("") //declare and assign the Regexpbefore as it is expensive to declare the regexp inside the loop
 
 	for i := range ruleArr {
 
-		// fromRegex := pcre.MustCompile(ruleArr[i].From, pcre.JAVASCRIPT_COMPAT)
-		re2 := regexp.MustCompile(ruleArr[i].From)
-		// fromRegex := pcre.MustCompile(ruleArr[i].From, pcre.UTF8)
+		re2 = regexp.MustCompile(ruleArr[i].From)
 		output = string(re2.ReplaceAll([]byte(output), []byte(ruleArr[i].To)))
-		// output = string(fromRegex.ReplaceAll([]byte(output), []byte(ruleArr[i].To), 0))
 
 	}
 	return output

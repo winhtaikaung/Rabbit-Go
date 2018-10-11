@@ -1,5 +1,5 @@
 
-# Rabbit-Node
+# Rabbit-Go
 
 ![Logo](https://avatars3.githubusercontent.com/u/11961573?v=3&s=100)
 

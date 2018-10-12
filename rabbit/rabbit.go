@@ -7,8 +7,8 @@ import (
 
 // RuleStruct maps the rule object from json
 type RuleStruct struct {
-	From string `json:from`
-	To   string `json:to`
+	From string
+	To   string
 }
 
 //Convert unicode string to zawgyi

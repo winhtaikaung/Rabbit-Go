@@ -29,10 +29,12 @@ notifications:
 # ...and adding this to your Gopkg.toml file.
 #   required = ["github.com/golangci/golangci-lint/cmd/golangci-lint"]
 before_script:
-  - go install ./vendor/github.com/winhtaikaung/rabbit-go/rabbit
+  - go install "github.com/winhtaikaung/rabbit-go/rabbit"
 
 # script always runs to completion (set +e). If we have linter issues AND a
 # failing test, we want to see both. Configure golangci-lint with a
 # .golangci.yml file at the top level of your repo.
 script:
-  - go test -v -race ./...  # Run all the tests with the race detector enabled
+  # - go test -v -race ./...  # Run all the tests with the race detector enabled
+
+  - go test ./rabbit/rabbit_test.go  # Run all the tests with the race detector enabled

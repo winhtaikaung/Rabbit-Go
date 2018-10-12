@@ -29,7 +29,7 @@ notifications:
 # ...and adding this to your Gopkg.toml file.
 #   required = ["github.com/golangci/golangci-lint/cmd/golangci-lint"]
 before_script:
-  - go install "github.com/winhtaikaung/rabbit-go/rabbit"
+  - go get "github.com/winhtaikaung/rabbit-go/rabbit"
 
 # script always runs to completion (set +e). If we have linter issues AND a
 # failing test, we want to see both. Configure golangci-lint with a

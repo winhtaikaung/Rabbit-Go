@@ -37,4 +37,4 @@ before_script:
 script:
   # - go test -v -race ./...  # Run all the tests with the race detector enabled
 
-  - go test ./rabbit/rabbit_test.go  # Run all the tests with the race detector enabled
+  - go test rabbit_test.go  # Run all the tests with the race detector enabled

@@ -1,4 +1,5 @@
 
+
   
 
 # Rabbit-Go
@@ -18,7 +19,8 @@ install using go get
 
 ## Usage
 
-  
+  playground link
+  https://play.golang.org/p/8oUUuRKk0SD
 
 ```
 import "rabbit"

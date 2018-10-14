@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"github.com/winhtaikaung/rabbit-go/rabbit"
+	"github.com/winhtaikaung/Rabbit-Go/rabbit"
 )
 
 const UNI_STRING = string("သီဟိုဠ်မှ ဉာဏ်ကြီးရှင်သည် အာယုဝဍ္ဎနဆေးညွှန်းစာကို ဇလွန်ဈေးဘေး ဗာဒံပင်ထက် အဓိဋ္ဌာန်လျက် ဂဃနဏဖတ်ခဲ့သည်။")

@@ -8,7 +8,7 @@
 
 ![Logo](https://avatars3.githubusercontent.com/u/11961573?v=3&s=100)
 
-  
+[![Build Status](https://travis-ci.org/winhtaikaung/Rabbit-Go.svg?branch=master)](https://travis-ci.org/winhtaikaung/Rabbit-Go)  
 
 **Zawgyi <=> Unicode Converter for Go lang (Go)**
 

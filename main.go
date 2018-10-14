@@ -1,7 +1,7 @@
 package main
 
 import (
-	"rabbit"
+	"github.com/winhtaikaung/Rabbit-Go/rabbit"
 )
 
 func main() {

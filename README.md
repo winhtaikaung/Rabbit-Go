@@ -14,7 +14,9 @@
 
   
 
-[![Build Status](https://travis-ci.org/winhtaikaung/Rabbit-Go.svg?branch=master)](https://travis-ci.org/winhtaikaung/Rabbit-Go) ![GO Report](https://goreportcard.com/badge/github.com/winhtaikaung/Rabbit-Go)
+[![Build Status](https://travis-ci.org/winhtaikaung/Rabbit-Go.svg?branch=master)](https://travis-ci.org/winhtaikaung/Rabbit-Go) 
+
+[![GO Report](https://goreportcard.com/badge/github.com/winhtaikaung/Rabbit-Go)](https://goreportcard.com/report/github.com/winhtaikaung/Rabbit-Go)
 
 
 

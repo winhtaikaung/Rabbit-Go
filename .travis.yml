@@ -28,8 +28,8 @@ notifications:
 #   dep ensure -add github.com/golangci/golangci-lint/cmd/golangci-lint
 # ...and adding this to your Gopkg.toml file.
 #   required = ["github.com/golangci/golangci-lint/cmd/golangci-lint"]
-# before_script:
-#   - go get "github.com/winhtaikaung/rabbit-go/rabbit"
+before_script:
+  - go get "github.com/winhtaikaung/rabbit-go/rabbit"
 
 # script always runs to completion (set +e). If we have linter issues AND a
 # failing test, we want to see both. Configure golangci-lint with a
